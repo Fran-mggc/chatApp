@@ -1,5 +1,7 @@
 <h1>
   {{title}}
   {{fatherCounter}}
-  <app-text-editor (incrementOne)="handleIncrement()")></app-text-editor>
 </h1>
+
+<app-text-editor (incrementOne)="handleIncrement()" (pushComment)="handleComment($event)"></app-text-editor>
+<app-chat-board [comment] = "fatherComment" ></app-chat-board>

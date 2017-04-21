@@ -10,13 +10,20 @@ import {TextEditorComponent} from './text-editor/text-editor.component';
 export class AppComponent {
 
   title = 'app works!';
-  fatherCounter:number ;
+  fatherCounter:number;
+  fatherComment:String;
+
 
   constructor(){
     this.fatherCounter = 0;
+    this.fatherComment = '';
   }
 
   handleIncrement(){
     this.fatherCounter++;
+  }
+
+  handleComment(event){
+    this.fatherComment = event.message;
   }
 }

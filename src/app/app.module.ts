@@ -5,11 +5,13 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { TextEditorComponent } from './text-editor/text-editor.component';
+import { ChatBoardComponent } from './chat-board/chat-board.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TextEditorComponent
+    TextEditorComponent,
+    ChatBoardComponent
   ],
   imports: [
     BrowserModule,
