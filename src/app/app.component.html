@@ -3,5 +3,8 @@
   {{fatherCounter}}
 </h1>
 
-<app-text-editor (incrementOne)="handleIncrement()" (pushComment)="handleComment($event)"></app-text-editor>
-<app-chat-board [comment] = "fatherComment" ></app-chat-board>
+<app-text-editor (incrementOne) = "handleIncrement()" (pushComment) = "handleComment($event)"></app-text-editor>
+<app-chat-board [comments] = "fatherComments"  ></app-chat-board>
+<app-users-list [users] = "fatherUsers"></app-users-list>
+
+

@@ -1,3 +1,5 @@
-<p>
- {{comment}}
-</p>
+<ul>
+ <li *ngFor="let comment of comments" [style.font-size]="comment.pair ? '20px' : '5px'">
+   {{comment.message}}
+ </li>
+</ul>

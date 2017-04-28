@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {TextEditorComponent} from './text-editor/text-editor.component';
+import {UsersService} from "./users.service";
 
 @Component({
   selector: 'app-root',
@@ -11,12 +11,15 @@ export class AppComponent {
 
   title = 'app works!';
   fatherCounter:number;
-  fatherComment:String;
+  fatherComments:object[];
+  isPair:Boolean;
+  fatherUsers: object[];
 
-
-  constructor(){
+  constructor(private usersService:UsersService){
     this.fatherCounter = 0;
-    this.fatherComment = '';
+    this.fatherComments = [];
+    this.isPair = false;
+    this.getUsers();
   }
 
   handleIncrement(){
@@ -24,6 +27,19 @@ export class AppComponent {
   }
 
   handleComment(event){
-    this.fatherComment = event.message;
+    this.isPair = !this.isPair;
+    let comment = {
+      message: event.message,
+      pair : this.isPair,
+      me: false
+    }
+
+    this.fatherComments.push(comment);
+  }
+
+  getUsers(){
+    this.usersService.getUsers().subscribe(
+      users => { this.fatherUsers = users; console.log(users); }
+    );
   }
 }

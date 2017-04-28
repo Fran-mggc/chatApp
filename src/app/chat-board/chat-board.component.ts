@@ -8,10 +8,10 @@ import { Component, OnInit,Input } from '@angular/core';
 
 export class ChatBoardComponent implements OnInit {
 
-  @Input() comment:String;
+  @Input() comments:Object[];
 
   constructor() {
-    this.comment = '';
+
   }
 
   ngOnInit() {

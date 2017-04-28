@@ -15,12 +15,12 @@ export class TextEditorComponent implements OnInit {
 
   constructor() {
     this.count=0;
+    this.message = 'Hola';
   }
 
   incrementCount(){
     this.incrementOne.emit();
     //this.count++;
-    this.message = 'Hola';
   }
 
   insertComment(){
